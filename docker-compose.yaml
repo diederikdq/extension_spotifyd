@@ -3,7 +3,7 @@ services:
   spotify:
     container_name: spotifyd
     restart: always
-    image: ghcr.io/hifiberry/extension_spotifyd:0.3.5.3
+    image: ghcr.io/diederikdq/extension_spotifyd:latest
     #build:
     #  context: .
     #  dockerfile: Dockerfile
