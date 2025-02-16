@@ -36,7 +36,10 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Clone the Spotifyd source code from GitHub
-RUN git clone https://github.com/Spotifyd/spotifyd.git .
+## I added the fix proposed in https://github.com/Spotifyd/spotifyd/issues/1306#issuecomment-2565901229
+RUN git clone https://github.com/Spotifyd/spotifyd.git . && \
+  git fetch origin pull/1317/head:deps_upgrade && \
+  git checkout deps_upgrade
 
 # Set client ID
 ARG SPOTIFY_CLIENT_ID
